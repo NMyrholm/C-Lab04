@@ -4,3 +4,9 @@ C:\Users\Nils\source\repos\lab04\lab04\bin\Debug\lab04.dll
 C:\Users\Nils\source\repos\lab04\lab04\bin\Debug\lab04.pdb
 C:\Users\Nils\source\repos\lab04\lab04\obj\Debug\lab04.dll
 C:\Users\Nils\source\repos\lab04\lab04\obj\Debug\lab04.pdb
+C:\Users\NilsM\source\repos\Lab04\lab04\bin\Debug\lab04.dll
+C:\Users\NilsM\source\repos\Lab04\lab04\bin\Debug\lab04.pdb
+C:\Users\NilsM\source\repos\Lab04\lab04\obj\Debug\Library.csprojAssemblyReference.cache
+C:\Users\NilsM\source\repos\Lab04\lab04\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\NilsM\source\repos\Lab04\lab04\obj\Debug\lab04.dll
+C:\Users\NilsM\source\repos\Lab04\lab04\obj\Debug\lab04.pdb

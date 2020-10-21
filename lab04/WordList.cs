@@ -57,20 +57,35 @@ namespace lab04
         public void Add(params string[] translations)
         {
             //Skriv ut translations som är orden, till .dat filen
-            if (File.Exists($@"{AppData}\{Name.ToLower()}.dat"))
+            if (!File.Exists($@"{AppData}\{Name.ToLower()}.dat"))
             {
+                File.Create($@"{AppData}\{Name.ToLower()}.dat").Close();
+            }
+
+            bool addLang;
+                using (StreamReader sr = new StreamReader($@"{AppData}\{Name.ToLower()}.dat"))
+                {
+                    addLang = sr.ReadLine() != Languages.ToString();
+                    sr.Close();
+                }
                 using (StreamWriter sw = new StreamWriter($@"{AppData}\{Name.ToLower()}.dat"))
                 {
+                    if (addLang)
+                    {
+                        foreach (string word in translations)
+                        {
+                            sw.Write(word);
+                        }
+                        sw.WriteLine();
+                    }
                     foreach (string word in translations)
                     {
                         sw.Write($"{word}");
                     }
-
+                    sw.WriteLine();
                     sw.Close();
                 }
-
                 Save();
-            }
         }
 
         public bool Remove(int translation, string word)
