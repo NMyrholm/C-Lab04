@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -43,7 +44,7 @@ namespace lab04
                 }
             }
 
-            Console.WriteLine("File not found!");
+            Console.WriteLine("File not found!"); // MOVE TO CONSOLE APP
 
             return null;
         }
@@ -55,7 +56,21 @@ namespace lab04
 
         public void Add(params string[] translations)
         {
-            
+            //Skriv ut translations som är orden, till .dat filen
+            if (File.Exists($@"{AppData}\{Name.ToLower()}.dat"))
+            {
+                using (StreamWriter sw = new StreamWriter($@"{AppData}\{Name.ToLower()}.dat"))
+                {
+                    foreach (string word in translations)
+                    {
+                        sw.Write($"{word}");
+                    }
+
+                    sw.Close();
+                }
+
+                Save();
+            }
         }
 
         public bool Remove(int translation, string word)
