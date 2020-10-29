@@ -3,7 +3,11 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
+// -Words <list name> <sortByLanguage>
+// -count <list name>
+// -practice <list name>
 namespace ConsoleApp
 {
     class Program
@@ -31,9 +35,9 @@ namespace ConsoleApp
                             break;
                         }
                         var newList = new WordList(args[1], args.Skip(2).ToArray());
-                        Console.WriteLine($"A new list named {args[1]} has been created!");
-                        newList.Add(args[1]);
-                        AddWords(args[1]);
+                        //Console.WriteLine($"A new list named {args[1]} has been created!");
+                        newList.Save();
+                        AddWords(newList);
                         break;
 
                     case "-add":
@@ -42,22 +46,24 @@ namespace ConsoleApp
                             Console.WriteLine("You forgot to enter the name of the list");
                             break;
                         }
-
-                        //var list = WordList.LoadList(args[1]);
-                        //string[] words = new string[list.Languages.Length];
-                        //bool exit = false;
-                        //do
-                        //{
-                        //    for (int i = 0; i < list.Languages.Length; i++)
-                        //    {
-                        //        Console.WriteLine($"Enter word in {list.Languages[i]}");
-                        //        words[i] = Console.ReadLine();
-                        //        exit = (words[i] == "");
-                        //    }
-                        //    list.Add(words);
-                        //} while (exit == false);
-                        AddWords(args[1]);
+                        var list = WordList.LoadList(args[1]);
+                        AddWords(list);
                         break;
+
+                    case "-remove":
+                        // Ladda in translations. Leta igenom vilket språk som tillhör vilket index och skicka till WordList.Remove() med de ord som skickas in i args
+                        var list2 = WordList.LoadList(args[1]);
+                        string[] languages = list2.Languages;
+                        int translation = Array.FindIndex(languages, l => l == args[2].ToLower());
+                        if (translation == -1)
+                        {
+                            Console.WriteLine("Couldn't find expected language");
+                            Environment.Exit(0);
+                        }
+
+                        list2.Remove(translation, args[3]);
+                        break;
+
 
                     default:
                         InvalidArgument();
@@ -68,9 +74,8 @@ namespace ConsoleApp
 
         }
 
-        public static void AddWords(string name)
+        public static void AddWords(WordList list)
         {
-            var list = WordList.LoadList(name);
             bool exit = false;
             do
             {
@@ -80,8 +85,10 @@ namespace ConsoleApp
                     Console.WriteLine($"Enter word in {list.Languages[i]}");
                     words[i] = Console.ReadLine();
                     exit = (words[i] == "");
+                    if (exit) break;
                 }
-                list.Add(words);
+                if (!exit) list.Add(words);
+                list.Save();
             } while (exit == false);
         }
 
