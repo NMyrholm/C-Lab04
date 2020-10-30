@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Xml.Linq;
 
+// -Add still needs to handle ArgumentException.
 // -Words <list name> <sortByLanguage>
 // -count <list name>
 // -practice <list name>
@@ -61,7 +62,9 @@ namespace ConsoleApp
                             Environment.Exit(0);
                         }
 
-                        list2.Remove(translation, args[3]);
+                        Console.WriteLine(list2.Remove(translation, args[3])
+                            ? $"The word '{args[3]}' has been removed from {list2.Name}."
+                            : "The word was not found. Did you spell correctly?");
                         break;
 
 
