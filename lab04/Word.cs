@@ -1,4 +1,6 @@
-﻿namespace lab04
+﻿using System;
+
+namespace lab04
 {
     public class Word
     {
@@ -9,8 +11,15 @@
         public Word(params string[] translations)
         {
             Translations = translations;
-            FromLanguage = 0;
-            ToLanguage = 1;
+
+            Random rnd = new Random();
+            var from = rnd.Next(translations.Length);
+            var to = rnd.Next(translations.Length);
+            while (to == from) to = rnd.Next(translations.Length);
+
+            FromLanguage = from;
+            ToLanguage = to;
+
         }
 
         public Word(int fromLanguage, int toLanguage, params string[] translations)
