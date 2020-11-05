@@ -43,13 +43,12 @@ namespace WinFormsApp
             Close();
         }
 
-        private void button3_Click(object sender, WordList list)
+        private void button3_Click(object sender, EventArgs e)
         {
             //WordListController wlc = new WordListController();
             //wlc.Dock = DockStyle.Fill;
             //wlc.AddDataGrid(ListName);
-            list = ListName;
-            SelectClicked?.Invoke(this, ListName);
+            SelectClicked?.Invoke(this, null);
             Close();
         }
 
