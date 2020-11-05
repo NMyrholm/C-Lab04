@@ -23,11 +23,10 @@ namespace WinFormsApp
             //splitContainer1.Panel1.Controls.Add(myListController);
             //myListController.Dock = DockStyle.Fill;
             myListForm.SelectClicked += MyListForm_SelectClicked;
-            myListForm.SelectClicked += (sender, e) => HandleClick(wordlist, sender, e);
 
         }
 
-        private void MyListForm_SelectClicked(object sender, WordList list)
+        private void MyListForm_SelectClicked(object sender, EventArgs e)
         {
             var myListController = new WordListController();
             //wordListControl.Dock = DockStyle.Fill;
