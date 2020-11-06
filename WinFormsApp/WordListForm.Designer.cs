@@ -46,7 +46,6 @@
             this.label1.Size = new System.Drawing.Size(56, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Word lists:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // listBoxWordLists
             // 
@@ -110,9 +109,9 @@
             this.wordCount.AutoSize = true;
             this.wordCount.Location = new System.Drawing.Point(82, 26);
             this.wordCount.Name = "wordCount";
-            this.wordCount.Size = new System.Drawing.Size(75, 13);
+            this.wordCount.Size = new System.Drawing.Size(69, 13);
             this.wordCount.TabIndex = 7;
-            this.wordCount.Text = "Word count: 2";
+            this.wordCount.Text = "Word count: ";
             this.wordCount.Click += new System.EventHandler(this.label3_Click);
             // 
             // WordListForm

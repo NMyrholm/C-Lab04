@@ -18,11 +18,6 @@ namespace WinFormsApp
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonOk_Click(object sender, EventArgs e)
         {
             string[] languages = textBoxLanguages.Text.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToArray();

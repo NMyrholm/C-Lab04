@@ -13,7 +13,6 @@ namespace lab04
         public static string AppData = $@"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\Lab04";
         private readonly List<Word> _listOfWords = new List<Word>();
 
-
         public WordList(string name, params string[] languages)
         {
             Name = name.ToLower();
@@ -22,7 +21,7 @@ namespace lab04
 
         public static string[] GetLists()
         {
-            DirectoryInfo d = new DirectoryInfo(AppData);
+            var d = new DirectoryInfo(AppData);
             FileInfo[] files = d.GetFiles("*.dat");
             string[] fileList = new string[files.Length];
 
@@ -140,11 +139,10 @@ namespace lab04
         {
             if (_listOfWords == null) return;
             var list = _listOfWords.OrderBy(x => x.Translations[sortByTranslation]);
-            foreach (var b in list)
+            foreach (var word in list)
             {
-                showTranslations(b.Translations);
+                showTranslations(word.Translations);
             }
-
         }
 
         public Word GetWordToPractice()

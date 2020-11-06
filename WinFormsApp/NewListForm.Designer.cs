@@ -71,7 +71,6 @@
             this.textBoxTitle.Name = "textBoxTitle";
             this.textBoxTitle.Size = new System.Drawing.Size(229, 20);
             this.textBoxTitle.TabIndex = 3;
-            this.textBoxTitle.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBoxLanguages
             // 

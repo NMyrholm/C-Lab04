@@ -19,7 +19,6 @@ namespace lab04
 
             FromLanguage = from;
             ToLanguage = to;
-
         }
 
         public Word(int fromLanguage, int toLanguage, params string[] translations)

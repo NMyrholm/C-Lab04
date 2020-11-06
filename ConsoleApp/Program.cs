@@ -69,8 +69,8 @@ namespace ConsoleApp
                             Console.WriteLine("You forgot to enter a language to sort by.. <listname> <sortbyLanguage>");
                             break;
                         }
-                        var wordsList = LoadList(args[1]);
-                        string[] languages2 = wordsList.Languages;
+                        var wordList = LoadList(args[1]);
+                        string[] languages2 = wordList.Languages;
 
                         var translation2 = Array.FindIndex(languages2, l => l.ToLower() == args[2].ToLower());
                         if (translation2 == -1)
@@ -79,14 +79,14 @@ namespace ConsoleApp
                             Environment.Exit(0);
                         }
 
-                        foreach (var language in wordsList.Languages)
+                        foreach (var language in wordList.Languages)
                         {
                             Console.Write(language.PadRight(20).ToUpper());
                         }
 
                         Console.WriteLine();
 
-                        wordsList.List(translation2, wordInTranslation =>
+                        wordList.List(translation2, wordInTranslation =>
                         {
                             foreach (var word in wordInTranslation)
                             {

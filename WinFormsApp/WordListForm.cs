@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using lab04;
+using System;
 using System.Windows.Forms;
-using lab04;
 
 namespace WinFormsApp
 {
@@ -19,24 +12,14 @@ namespace WinFormsApp
         public WordListForm()
         {
             InitializeComponent();
-
         }
         public WordList ListName { get; set; }
 
         private void WordListForm_Load(object sender, EventArgs e)
         {
-            string[] lists = WordList.GetLists();
-
-            foreach (var l in lists)
-            {
-                listBoxWordLists.Items.Add(l);
-            }
+            UpdateListOfLists();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -45,9 +28,6 @@ namespace WinFormsApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //WordListController wlc = new WordListController();
-            //wlc.Dock = DockStyle.Fill;
-            //wlc.AddDataGrid(ListName);
             SelectClicked?.Invoke(this, null);
             Close();
         }
@@ -73,19 +53,28 @@ namespace WinFormsApp
             }
 
             wordCount.Text = $"Word count: {ListName.Count()}";
+            buttonSelect.Enabled = true;
 
+        }
 
+        private void UpdateListOfLists()
+        {
+            listBoxWordLists.Items.Clear();
+            string[] lists = WordList.GetLists();
+
+            foreach (var l in lists)
+            {
+                listBoxWordLists.Items.Add(l);
+            }
         }
 
         private void buttonNewList_Click(object sender, EventArgs e)
         {
             using (NewListForm newListForm = new NewListForm())
             {
-                if (newListForm.ShowDialog() == DialogResult.OK)
-                {
-                    //WordList.LoadList()
-                }
+                newListForm.ShowDialog();
             }
+            UpdateListOfLists();
         }
     }
 }
