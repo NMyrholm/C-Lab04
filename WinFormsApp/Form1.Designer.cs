@@ -31,7 +31,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.wordListsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewForm = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,8 +44,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.viewToolStripMenuItem});
+            this.fileToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -64,15 +62,9 @@
             // wordListsToolStripMenuItem
             // 
             this.wordListsToolStripMenuItem.Name = "wordListsToolStripMenuItem";
-            this.wordListsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.wordListsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.wordListsToolStripMenuItem.Text = "Word lists";
             this.wordListsToolStripMenuItem.Click += new System.EventHandler(this.wordListsToolStripMenuItem_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "View";
             // 
             // dataGridViewForm
             // 
@@ -170,7 +162,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem wordListsToolStripMenuItem;
         private System.Windows.Forms.DataGridView dataGridViewForm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

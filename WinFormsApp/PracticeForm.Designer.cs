@@ -38,7 +38,7 @@
             // buttonRestart
             // 
             this.buttonRestart.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonRestart.Location = new System.Drawing.Point(252, 331);
+            this.buttonRestart.Location = new System.Drawing.Point(299, 331);
             this.buttonRestart.Name = "buttonRestart";
             this.buttonRestart.Size = new System.Drawing.Size(106, 28);
             this.buttonRestart.TabIndex = 0;
@@ -49,7 +49,7 @@
             // buttonEndPractice
             // 
             this.buttonEndPractice.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.buttonEndPractice.Location = new System.Drawing.Point(385, 331);
+            this.buttonEndPractice.Location = new System.Drawing.Point(432, 331);
             this.buttonEndPractice.Name = "buttonEndPractice";
             this.buttonEndPractice.Size = new System.Drawing.Size(106, 28);
             this.buttonEndPractice.TabIndex = 1;
@@ -60,7 +60,7 @@
             // textBoxInput
             // 
             this.textBoxInput.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBoxInput.Location = new System.Drawing.Point(252, 170);
+            this.textBoxInput.Location = new System.Drawing.Point(299, 170);
             this.textBoxInput.Name = "textBoxInput";
             this.textBoxInput.Size = new System.Drawing.Size(239, 20);
             this.textBoxInput.TabIndex = 2;
@@ -70,7 +70,7 @@
             this.labelTranslate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelTranslate.AutoSize = true;
             this.labelTranslate.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTranslate.Location = new System.Drawing.Point(172, 105);
+            this.labelTranslate.Location = new System.Drawing.Point(219, 105);
             this.labelTranslate.Name = "labelTranslate";
             this.labelTranslate.Size = new System.Drawing.Size(96, 26);
             this.labelTranslate.TabIndex = 3;
@@ -82,7 +82,7 @@
             this.labelScore.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelScore.AutoSize = true;
             this.labelScore.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelScore.Location = new System.Drawing.Point(247, 238);
+            this.labelScore.Location = new System.Drawing.Point(294, 238);
             this.labelScore.Name = "labelScore";
             this.labelScore.Size = new System.Drawing.Size(246, 26);
             this.labelScore.TabIndex = 4;
@@ -93,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(748, 472);
+            this.ClientSize = new System.Drawing.Size(843, 472);
             this.Controls.Add(this.labelScore);
             this.Controls.Add(this.labelTranslate);
             this.Controls.Add(this.textBoxInput);
